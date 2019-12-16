@@ -1,3 +1,5 @@
+This is the legacy Branch from Labs 17.
+
 # API Documentation
 
 #### Backend delpoyed at [AWS Beanstalk](https://d2di75zt4h5vt7.cloudfront.net/) <br>
@@ -13,13 +15,13 @@ To get the server running locally:
 
 ### ExpressJs
 
--    Express.js makes development easy by allowing us to create secure, modular, and fast applications. 
+- Express.js makes development easy by allowing us to create secure, modular, and fast applications.
 
--    Express.js is an unopinionated framework, meaning there isn't any strict and determined rules on how to deal with certain requests. We can create our own custom middleware to handle requests in the ways we wish.
+- Express.js is an unopinionated framework, meaning there isn't any strict and determined rules on how to deal with certain requests. We can create our own custom middleware to handle requests in the ways we wish.
 
 ## Api docs are [HERE](https://d2di75zt4h5vt7.cloudfront.net/docs) <br>
 
-- To update the documentation for the API **npm run docs** 
+- To update the documentation for the API **npm run docs**
 
 # Data Model
 
@@ -58,6 +60,7 @@ To get the server running locally:
 <br>
 
 ### Users
+
 `find()` -> Returns all users
 
 `updateUser(changes, email)` -> Update a user by email
@@ -70,20 +73,19 @@ To get the server running locally:
 
 `findByRole(role)` -> Find users by role name
 
-
 ## Environment Variables
 
 In order for the app to function correctly, the user must set up their own environment variables.
 
 create a .env file that includes the following:
-    
-    *  JWT_ADMIN - you can create a secret to be attached to token generated for all admin accounts
-    *  JWT_MANAGER - you can create a secret to be attached to token generated for all manager accounts
-    *  JWT_STUDENT - you can create a secret to be attached to token generated for all manager accounts
-    *  ADMIN_SECRET - a string used to authenticate a user is of type admin to prevent all other user types from accessing protected routes. 
-    *  DB_ENV - set to "development" until ready for "production" or "staging"
-    *  NODE_ENV - set to "development" until ready for "production" or "staging"
-    
+
+_ JWT_ADMIN - you can create a secret to be attached to token generated for all admin accounts
+_ JWT*MANAGER - you can create a secret to be attached to token generated for all manager accounts
+* JWT*STUDENT - you can create a secret to be attached to token generated for all manager accounts
+* ADMIN*SECRET - a string used to authenticate a user is of type admin to prevent all other user types from accessing protected routes.
+* DB*ENV - set to "development" until ready for "production" or "staging"
+* NODE_ENV - set to "development" until ready for "production" or "staging"
+
 ## Contributing
 
 When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
@@ -92,11 +94,12 @@ Please note we have a [code of conduct](./code_of_conduct.md). Please follow it 
 
 ### Issue/Bug Request
 
- **If you are having an issue with the existing project code, please submit a bug report under the following guidelines:**
- - Check first to see if your issue has already been reported.
- - Check to see if the issue has recently been fixed by attempting to reproduce the issue using the latest master branch in the repository.
- - Create a live example of the problem.
- - Submit a detailed bug report including your environment & browser, steps to reproduce the issue, actual and expected outcomes,  where you believe the issue is originating from, and any potential solutions you have considered.
+**If you are having an issue with the existing project code, please submit a bug report under the following guidelines:**
+
+- Check first to see if your issue has already been reported.
+- Check to see if the issue has recently been fixed by attempting to reproduce the issue using the latest master branch in the repository.
+- Create a live example of the problem.
+- Submit a detailed bug report including your environment & browser, steps to reproduce the issue, actual and expected outcomes, where you believe the issue is originating from, and any potential solutions you have considered.
 
 ### Feature Requests
 
