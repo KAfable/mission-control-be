@@ -1,9 +1,12 @@
 # Logs
-logs
-*.log
+**/logs
+**/*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
 # Runtime data
 pids
@@ -33,7 +36,7 @@ bower_components
 build/Release
 
 # Dependency directories
-node_modules/
+**/node_modules
 jspm_packages/
 
 # TypeScript v1 declaration files
@@ -45,6 +48,12 @@ typings/
 # Optional eslint cache
 .eslintcache
 
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
 # Optional REPL history
 .node_repl_history
 
@@ -55,8 +64,8 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
-.env.test
+**/.env
+**/.env*
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -67,11 +76,11 @@ typings/
 # nuxt.js build output
 .nuxt
 
-# vuepress build output
-.vuepress/dist
+# gatsby files
+.cache/
+public
 
-# Serverless directories
-.serverless/
+
 
 # FuseBox cache
 .fusebox/
@@ -79,10 +88,25 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
+#serverless
+serverless.yml
 
-# Elastic Beanstalk
-.elasticbeanstalk/
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
+.vscode
+
+out/
+dist/
+
+apollo/src/generated/
+apollo/src/schema/generated/
+
+# lockfiles
+yarn.lock
+package-lock.json
+apollo/schema/generated/prisma.graphql
+apollo/src/generated/prisma-client/index.d.ts
+apollo/src/generated/prisma-client/prisma-schema.js
+**/.vscode
+**/out
+**/build
+**/dist
+**/generated

@@ -1,0 +1,60 @@
+type Program {
+  id: ID! @id
+  name: String! @unique
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  products: [Product!]!
+}
+type Product {
+  id: ID! @id
+  name: String!
+  program: Program!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  projects: [Project!]!
+}
+type Project {
+  id: ID! @id
+  name: String!
+  product: Product!
+  status: Boolean @default(value: false)
+  sectionLead: Person @relation(link: INLINE, name: "SectionLead")
+  teamLead: Person @relation(link: INLINE, name: "TeamLead")
+  projectManagers: [Person!]! @relation(name: "ProjectManager")
+  team: [Person!]! @relation(name: "Team")
+  notes: [Note!]!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+type Note {
+  id: ID! @id
+  topic: String!
+  content: String!
+  author: Person! @relation(name: "NoteAuthor")
+  attendedBy: [Person!]! @relation(name: "NoteAttendee")
+  project: Project!
+  rating: Int!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+enum Role {
+  SL
+  TL
+  WEB
+  DS
+  UX
+  PM
+}
+type Person {
+  id: ID! @id
+  name: String!
+  email: String! @unique
+  role: Role!
+  authored: [Note!]! @relation(name: "NoteAuthor")
+  attended: [Note!]! @relation(name: "NoteAttendee")
+  manages: [Project!]! @relation(name: "ProjectManager")
+  team: Project @relation(name: "Team")
+  sl: [Project!]! @relation(name: "SectionLead")
+  tl: Project @relation(name: "TeamLead")
+  avatar: String
+}
